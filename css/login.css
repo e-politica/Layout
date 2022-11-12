@@ -76,19 +76,14 @@ body {
     border: 1px solid #fff;
     transition: background-color 1s;
 }
-.btn-primary:hover {
-    background-color: #fff;
-    color: #97a97c;
-}
 .btn-second {
     background-color: #cfe1be;
     border: 1px solid #fff;
     transition: background-color 1s;
 }
-.btn-second:hover {
-    background-color: #fff;
-    border: 1px solid #fff;
-    color: #cfe1be;
+.btn a{
+    color: white;
+    text-decoration: none;
 }
 .first-content {
     display: flex;

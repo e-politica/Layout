@@ -291,15 +291,8 @@ a{
 .btn{
     position: relative;
     border: 1px solid #fff;
-    color: #fff;
     border-radius: 15px;
     text-transform: uppercase;
-    background-color: #cfe1b9;
     cursor: pointer;
     padding: 10px 50px;
-    transition: background-color 1s;
-}
-.btn:hover {
-    background-color: #fff;
-    color: #97a97c;
 }
