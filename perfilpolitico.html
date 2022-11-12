@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,89 +11,51 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <div class="container">
-      <div class="box">
-        <img src="img/img_avatar.png" alt="">
-          <ul>
-            <li><p>Nome</p></li>
-            <li><p>Cargo</p></li>
-            <li><p>Partido</p></li>
-          </ul>
+        <div class="box">
+            <img id="foto-politico" src="img/img_avatar.png" alt="">
+            <ul>
+                <li id="nome-politico">
+                    <p>-</p>
+                </li>
+                <li id="partido-politico">
+                    <p>-</p>
+                </li>
+                <li id="email-politico">
+                    <p>-</p>
+                </li>
+                <li id="nascimento-politico">
+                    <p>-</p>
+                </li>
+            </ul>
 
-          <form class="form">
-            <div class="label-input">
-                <i class="fi fi-rr-user-add icon-modify"></i>
-                <button class="btn-politico">Seguir</button>
-            </div>
-            <div class="label-input">
-                <i class="fi fi-rr-social-network icon-modify"></i>
-                <button class="btn-politico">Curtir</button>
-            </div>
-            <div class="label-input">
-                <i class="fi fi-rr-home icon-modify"></i>
-                <button class="btn-politico">Inicio</button>
-            </div>
-          </form>
-    </div>
-        
+            <form class="form">
+                <div class="label-input">
+                    <i class="fi fi-rr-user-add icon-modify"></i>
+                    <button class="btn-politico">Seguir</button>
+                </div>
+                <div class="label-input">
+                    <i class="fi fi-rr-social-network icon-modify"></i>
+                    <button class="btn-politico">Curtir</button>
+                </div>
+                <div class="label-input">
+                    <i class="fi fi-rr-home icon-modify"></i>
+                    <button class="btn-politico">Inicio</button>
+                </div>
+            </form>
+        </div>
+
         <div class="About">
-        <h1>Projetos em Analise</h1>
-            <div class="container-card">
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-                <div class="card">
-                    <img src="img/img_avatar.png" alt="Avatar" style="width:100%">
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices;</p>
-                </div>
-        </div>
+            <h1>Projetos em Analise</h1>
+            <div id="container-card" class="container-card">
+            </div>
+            <button onclick="loadMoreProjects()">Mostrar mais</button>
         </div>
     </div>
-    
-    
-        
-  
+
+    <script src="js/perfilpolitico.js"></script>
 </body>
+
 </html>

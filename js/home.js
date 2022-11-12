@@ -14,6 +14,11 @@ window.addEventListener("load", showParties)
 
 var deputiesPage = 1
 
+function loadMoreDeputies() {
+    deputiesPage++
+    showDeputies()
+}
+
 function showDeputies() {
     let containerCard = document.getElementById("container-card")
 
@@ -32,8 +37,26 @@ function showDeputies() {
         .then((data) => {
 
             data.dados.forEach(element => {
+                // aqui
+                // cria um element 'a', e coloca isso no parametro href dele:
+                // `/perfilpolitico?id=${element.id}`
+                // substitui "" por ``
+                // mas ja ta certinho
+                // gg
+                // vou testar
+                //boa
+                // kk viu
+                // nao é ''
+                // é ``
+                // shift + [
+                // ah lllkkk eu tava lá atualizando a pág
+
+                let a = document.createElement("a")
+                a.className = "card"
+                a.href = `/perfilpolitico.html?id=${element.id}`
+
                 let div = document.createElement("div")
-                div.className = "card"
+                    // div.className = "card"
 
                 let img = document.createElement("img")
                 img.src = element.urlFoto
@@ -45,17 +68,13 @@ function showDeputies() {
 
                 div.appendChild(img)
                 div.appendChild(spam)
-                containerCard.appendChild(div)
+                a.appendChild(div)
+                containerCard.appendChild(a)
             })
         })
         .catch(function(error) {
             console.log(error)
         })
-}
-
-function loadMoreDeputies() {
-    deputiesPage++
-    showDeputies()
 }
 
 function showParties() {
