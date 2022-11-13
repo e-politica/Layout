@@ -18,8 +18,14 @@ function sendRegister() {
     // pra poder pegar os valores deles la no form. humm com o 'let' tbm?
     // vou fazer um exemplo pq nao sei ao certo tb
     // aqui não ta na parte de comentarios?
-    // tamo fazendo no arquivo errado kk
+    // tamo fazendo no arquivo errado kk. kkkkkmkkk
 
     let name = document.getElementById("register-name").value
     console.log(name)
+
+    let email = document.getElementById("register-email").value
+    console.log(email)
+
+    let password = document.getElementById("register-password").value
+    console.log(password)
 }
