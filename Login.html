@@ -46,7 +46,7 @@
                     </label>
 
 
-                    <button class="btn btn-second" onclick="console.log('aaaaa')">Cadastrar</button>
+                    <button class="btn btn-second" onclick="sendRegister()">Cadastrar</button>
                 </form>
             </div>
             <!-- second column -->
@@ -73,17 +73,16 @@
 
                     <label class="label-input" for="">
                         <i class="fi fi-rr-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input type="email" id="login-email" placeholder="Email">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fi fi-rr-lock icon-modify"></i>
-                        <input type="password" placeholder="Senha">
+                        <input type="password" id="login-password" placeholder="Senha">
                     </label>
 
-                    <a class="password" href="#">Esqueceu sua senha?</a>
-                    <button class="btn btn-second">
-                    <a href="homelogado.html">Entrar</a></button>
+                    <!-- <a class="password" href="#">Esqueceu sua senha?</a> -->
+                    <button class="btn btn-second" onclick="sendLogin()"></button>
                 </form>
             </div>
             <!-- second column -->
