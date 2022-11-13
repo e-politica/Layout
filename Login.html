@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
+
 <body>
     <div class="container">
         <div class="content first-content">
@@ -16,7 +18,7 @@
                 <p class="description description-primary">Para continuar conosco por favor,</p>
                 <p class="description description-primary">logue com suas informações pessoais</p>
                 <button id="signin" class="btn btn-primary">Logar</button>
-            </div>    
+            </div>
             <div class="second-column">
                 <h2 class="title title-second">Crie sua conta</h2>
                 <div class="social-media">
@@ -25,30 +27,31 @@
                     <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
                     </div>
                 </div>
-                
+
                 <p class="description description-second">ou use o e-mail para o registro:</p>
                 <form class="form">
                     <label class="label-input" for="">
                         <i class="fi fi-rr-user icon-modify"></i>
-                        <input type="text" placeholder="Nome Completo">
+                        <input type="text" id="register-name" placeholder="Nome Completo">
                     </label>
-                    
+
                     <label class="label-input" for="">
                         <i class="fi fi-rr-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input type="email" id="register-email" placeholder="Email">
                     </label>
-                    
+
                     <label class="label-input" for="">
                         <i class="fi fi-rr-lock icon-modify"></i>
-                        <input type="password" placeholder="Senha">
+                        <input type="password" id="register-password" placeholder="Senha">
                     </label>
-                    
-                    
-                    <button class="btn btn-second">
-                    <a href="homelogado.html">Cadastrar</a></button>        
+
+
+                    <button class="btn btn-second" onclick="console.log('aaaaa')">Cadastrar</button>
                 </form>
-            </div><!-- second column -->
-        </div><!-- first content -->
+            </div>
+            <!-- second column -->
+        </div>
+        <!-- first content -->
         <div class="content second-content">
             <div class="first-column">
                 <h2 class="title title-primary">Olá!</h2>
@@ -64,29 +67,32 @@
                     <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
                     </div>
                 </div>
-                
+
                 <p class="description description-second">ou use o e-mail para o registro:</p>
                 <form class="form">
-                
+
                     <label class="label-input" for="">
                         <i class="fi fi-rr-envelope icon-modify"></i>
                         <input type="email" placeholder="Email">
                     </label>
-                
+
                     <label class="label-input" for="">
                         <i class="fi fi-rr-lock icon-modify"></i>
                         <input type="password" placeholder="Senha">
                     </label>
-                
+
                     <a class="password" href="#">Esqueceu sua senha?</a>
                     <button class="btn btn-second">
                     <a href="homelogado.html">Entrar</a></button>
                 </form>
-            </div><!-- second column -->
-        </div><!-- second-content -->
+            </div>
+            <!-- second column -->
+        </div>
+        <!-- second-content -->
     </div>
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="js/login.js"></script>
 </body>
+
 </html>
