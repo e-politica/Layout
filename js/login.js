@@ -94,3 +94,4 @@ function sendLogin() {
 // vamo testa
 // testa clicando no botao de register e login
 // mas so muda o email pq vai retornar um erro, por ja ter conta criada, se vc testar o register
+// ok pode dar pull
