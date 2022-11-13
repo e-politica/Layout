@@ -21,6 +21,7 @@ function sendRegister() {
     let headers = {
         method: 'POST',
         headers: new Headers({
+            'Content-Type': 'application/json',
             'Accept': 'application/json'
         }),
         body: JSON.stringify({
@@ -43,4 +44,5 @@ function sendRegister() {
         })
 }
 
-// vamos testar
+// vamos testar da pull ai e roda essa fun
+//deu algum erro to vendo aqui
