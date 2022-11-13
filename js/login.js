@@ -13,19 +13,34 @@ btnSignup.addEventListener("click", function() {
 })
 
 function sendRegister() {
-    // bia, viu aqueles ids que eu criei la nos inputs? sim
-    // a gente vai pegar cada um daqueles inputs com o getElementById
-    // pra poder pegar os valores deles la no form. humm com o 'let' tbm?
-    // vou fazer um exemplo pq nao sei ao certo tb
-    // aqui não ta na parte de comentarios?
-    // tamo fazendo no arquivo errado kk. kkkkkmkkk
-
     let name = document.getElementById("register-name").value
-    console.log(name)
-
     let email = document.getElementById("register-email").value
-    console.log(email)
-
     let password = document.getElementById("register-password").value
-    console.log(password)
+
+    let url = `https://cdbf-2804-7f0-bec1-90e0-6810-298d-a4a-4735.sa.ngrok.io/v1/user/register`
+    let headers = {
+        method: 'POST',
+        headers: new Headers({
+            'Accept': 'application/json'
+        }),
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            password: password,
+            picture: "avatar aqui" // vamos arrumar depois
+        })
+    }
+
+    fetch(url, headers)
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            console.log(data)
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
 }
+
+// vamos testar
