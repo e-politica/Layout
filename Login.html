@@ -29,25 +29,25 @@
                 </div>
 
                 <p class="description description-second">ou use o e-mail para o registro:</p>
-                <form class="form">
+                <div class="form">
                     <label class="label-input" for="">
                         <i class="fi fi-rr-user icon-modify"></i>
-                        <input type="text" id="register-name" placeholder="Nome Completo">
+                        <input type="text" id="register-name" placeholder="Nome Completo" required>
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fi fi-rr-envelope icon-modify"></i>
-                        <input type="email" id="register-email" placeholder="Email">
+                        <input type="email" id="register-email" placeholder="Email" required>
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fi fi-rr-lock icon-modify"></i>
-                        <input type="password" id="register-password" placeholder="Senha">
+                        <input type="password" id="register-password" placeholder="Senha" required>
                     </label>
 
 
                     <button class="btn btn-second" onclick="sendRegister()">Cadastrar</button>
-                </form>
+                </div>
             </div>
             <!-- second column -->
         </div>
@@ -69,21 +69,21 @@
                 </div>
 
                 <p class="description description-second">ou use o e-mail para o registro:</p>
-                <form class="form">
+                <div class="form">
 
                     <label class="label-input" for="">
                         <i class="fi fi-rr-envelope icon-modify"></i>
-                        <input type="email" id="login-email" placeholder="Email">
+                        <input type="email" id="login-email" placeholder="Email" required>
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fi fi-rr-lock icon-modify"></i>
-                        <input type="password" id="login-password" placeholder="Senha">
+                        <input type="password" id="login-password" placeholder="Senha" required>
                     </label>
 
                     <!-- <a class="password" href="#">Esqueceu sua senha?</a> -->
-                    <button class="btn btn-second" onclick="sendLogin()"></button>
-                </form>
+                    <button class="btn btn-second" onclick="sendLogin()">Logar</button>
+                </div>
             </div>
             <!-- second column -->
         </div>

@@ -34,14 +34,14 @@ function sendRegister() {
 
     fetch(url, headers)
         .then((response) => {
-            if (response.status != 200) {
-                throw new Error('something went wrong while registering')
+            if (response.status != 201) {
+                throw new Error('something went wrong while logging in')
             }
-            return response
+            return response.json()
         })
         .then((data) => {
-            localStorage.setItem("epolitica-session", response)
-            window.location.href = "home" // vamos arrumar depois
+            localStorage.setItem("epolitica-session", JSON.stringify(data))
+                // window.location.href = "home" // vamos arrumar depois
         })
         .catch(function(error) {
             console.log(error)
@@ -70,11 +70,11 @@ function sendLogin() {
             if (response.status != 200) {
                 throw new Error('something went wrong while logging in')
             }
-            return response
+            return response.json()
         })
         .then((data) => {
-            localStorage.setItem("epolitica-session", response)
-            window.location.href = "home" // vamos arrumar depois
+            localStorage.setItem("epolitica-session", JSON.stringify(data))
+                // window.location.href = "home" // vamos arrumar depois
         })
         .catch(function(error) {
             console.log(error)
@@ -94,4 +94,4 @@ function sendLogin() {
 // vamo testa
 // testa clicando no botao de register e login
 // mas so muda o email pq vai retornar um erro, por ja ter conta criada, se vc testar o register
-// ok pode dar pull
+// ok pode dar pull faz dnv kk

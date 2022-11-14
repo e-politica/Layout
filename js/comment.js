@@ -48,3 +48,38 @@ function showProjectInfo() {
             console.log(error)
         })
 }
+
+function sendComment() {
+    let commentContent = document.getElementById("comment-content").value
+
+    let session = JSON.parse(localStorage.getItem("epolitica-session"))
+
+    let url = `https://cdbf-2804-7f0-bec1-90e0-6810-298d-a4a-4735.sa.ngrok.io/v1/proposition/${urlParams.id}/comment`
+    let headers = {
+        method: 'POST',
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': session.access_token
+        }),
+        body: JSON.stringify(commentContent)
+    }
+
+    fetch(url, headers)
+        .then((response) => {
+            if (response.status != 200) {
+                throw new Error('something went wrong while commenting')
+            }
+            return response.json()
+        })
+        .then((data) => {
+            console.log(data)
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
+}
+
+// so deixa eu ver o que vai precisar la do html. okk
+// vou testar aqui
+// isso é so pra enviar o comentario que inserir la
