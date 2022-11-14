@@ -80,6 +80,35 @@ function sendComment() {
         })
 }
 
-// so deixa eu ver o que vai precisar la do html. okk
-// vou testar aqui
-// isso é so pra enviar o comentario que inserir la
+var commentsPage = 1
+
+function loadMoreComments() {
+    commentsPage++
+    showComments()
+}
+
+function showComments() {
+    let url = `https://cdbf-2804-7f0-bec1-90e0-6810-298d-a4a-4735.sa.ngrok.io/v1/proposition/${urlParams.id}/comments?page=${commentsPage}&limit=2`
+    let headers = {
+        method: 'GET',
+        headers: new Headers({
+            'Accept': 'application/json'
+        })
+    }
+
+    fetch(url, headers)
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            console.log(data)
+                // let tipo = document.getElementById("project-type")
+                // tipo.innerHTML = data.dados.siglaTipo
+
+            // let ementa = document.getElementById("project-ementa")
+            // ementa.innerHTML = data.dados.ementa
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
+}
