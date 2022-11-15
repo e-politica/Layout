@@ -68,6 +68,8 @@ function sendComment() {
         .catch(function(error) {
             console.log(error)
         })
+
+    // location.reload()
 }
 
 var commentsPage = 1
@@ -96,12 +98,6 @@ function showComments() {
         })
         .then((data) => {
             data.forEach(element => {
-                // bia
-                // opa
-                // troca ai os innerHTML do nome, comment, e src da imagem para aqueles campos
-                // que mandei no zap. belezas
-
-
                 let div = document.createElement("div")
                 div.className = "card"
 
@@ -111,20 +107,11 @@ function showComments() {
 
                 let imagem = document.createElement("img")
                 imagem.className = "profile-img"
-                    // esse campo picture, ta dentro de quem, la naquele print que mandei? e o name tbn do public user info
-                    // isso, ai tem que fazer daquele jeito. como ta dentro, vc faz element.public_user_info.bibibibi isso
                 imagem.src = element.user_public_info.picture
 
                 let comment = document.createElement("p")
                 comment.className = "profile-info"
-                comment.innerHTML = element.comment // esse aqui é assim? isso ai, ele nao ta dentro de ninguem, entao sim
-
-                // faz aqui essa parte de append child da div pfv belezii
-                // faz antes desse dai
-                // ta certo, sem "" mesmo. é os nomes das variaveis que fez o let la em cima
-                // isso sao as classes
-                // vc tem que passar o nome das variaveis, nome, imagem, comment :) kkkk boa
-
+                comment.innerHTML = element.comment
                 div.appendChild(nome)
                 div.appendChild(comment)
                 div.appendChild(imagem)
@@ -136,7 +123,3 @@ function showComments() {
             console.log(error)
         })
 }
-
-// da pull, control+c naquele server, roda dnv, e da f5 na pagina do comentario direto
-// é pra vc continuar logada ja. belezis
-// faltou salvar o codigo kk akkkk faltou uma coisa aqui
