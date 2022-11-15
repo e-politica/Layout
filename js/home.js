@@ -37,19 +37,7 @@ function showDeputies() {
         .then((data) => {
 
             data.dados.forEach(element => {
-                // aqui
-                // cria um element 'a', e coloca isso no parametro href dele:
-                // `/perfilpolitico?id=${element.id}`
-                // substitui "" por ``
-                // mas ja ta certinho
-                // gg
-                // vou testar
-                //boa
-                // kk viu
-                // nao é ''
-                // é ``
-                // shift + [
-                // ah lllkkk eu tava lá atualizando a pág
+
 
                 let a = document.createElement("a")
                 a.className = "card"

@@ -17,7 +17,7 @@ function sendRegister() {
     let email = document.getElementById("register-email").value
     let password = document.getElementById("register-password").value
 
-    let url = `https://cdbf-2804-7f0-bec1-90e0-6810-298d-a4a-4735.sa.ngrok.io/v1/user/register`
+    let url = `https://a84f-2804-7f0-bec1-90e0-7d86-656-c293-9dd9.sa.ngrok.io/v1/user/register`
     let headers = {
         method: 'POST',
         headers: new Headers({
@@ -52,7 +52,7 @@ function sendLogin() {
     let email = document.getElementById("login-email").value
     let password = document.getElementById("login-password").value
 
-    let url = `https://cdbf-2804-7f0-bec1-90e0-6810-298d-a4a-4735.sa.ngrok.io/v1/user/login`
+    let url = `https://a84f-2804-7f0-bec1-90e0-7d86-656-c293-9dd9.sa.ngrok.io/v1/user/login`
     let headers = {
         method: 'POST',
         headers: new Headers({
