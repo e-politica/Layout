@@ -1,13 +1,3 @@
-const button = document.querySelector('#like');
-const number = document.querySelector('#number');
-
-button.addEventListener('click', () => {
-    let likeValue = document.querySelector('#number').textContent;
-    let newValue = Number(likeValue) + 1;
-    button.classList.add('like');
-    number.innerHTML = newValue;
-});
-
 var urlParams = function() {
     var query = location.search.slice(1)
     var partes = query.split('&')
@@ -117,13 +107,13 @@ function showComments() {
 
                 let nome = document.createElement("h2")
                 nome.className = "profile-name"
-                nome.innerHTML = element.public_user_info.name
+                nome.innerHTML = element.user_public_info.name
 
                 let imagem = document.createElement("img")
                 imagem.className = "profile-img"
                     // esse campo picture, ta dentro de quem, la naquele print que mandei? e o name tbn do public user info
                     // isso, ai tem que fazer daquele jeito. como ta dentro, vc faz element.public_user_info.bibibibi isso
-                imagem.src = element.public_user_info.picture
+                imagem.src = element.user_public_info.picture
 
                 let comment = document.createElement("p")
                 comment.className = "profile-info"
@@ -142,7 +132,7 @@ function showComments() {
 
             })
         })
-        .catch(function(errord) {
+        .catch(function(error) {
             console.log(error)
         })
 }
