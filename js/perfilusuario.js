@@ -41,18 +41,25 @@ function showUserInfo() {
 function sendUpdateUser() {
     let updateName = document.getElementById("update-name").value
     let updatePicture = document.getElementById("update-picture").value
+    let updateNewPassword = document.getElementById("update-new-password").value
+    let updatePassword = document.getElementById("update-password").value
 
     let session = JSON.parse(localStorage.getItem("epolitica-session"))
 
-    let url = `https://a84f-2804-7f0-bec1-90e0-7d86-656-c293-9dd9.sa.ngrok.io/v1/proposition/${urlParams.id}/comment`
+    let url = `https://a84f-2804-7f0-bec1-90e0-7d86-656-c293-9dd9.sa.ngrok.io/v1/user`
     let headers = {
-        method: 'POST',
+        method: 'PUT',
         headers: new Headers({
             'Content-Type': 'application/json',
             'Accept': 'application/json',
             'Authorization': session.access_token
         }),
-        body: JSON.stringify(commentContent)
+        body: JSON.stringify({
+            name: updateName,
+            picture: updatePicture,
+            new_password: updateNewPassword,
+            password: updatePassword
+        })
     }
 
     fetch(url, headers)
