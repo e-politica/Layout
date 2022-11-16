@@ -1,3 +1,31 @@
+window.addEventListener("load", showAccountPicture)
+
+function showAccountPicture() {
+    let session = JSON.parse(localStorage.getItem("epolitica-session"))
+
+    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/user/public/${session.user_id}`
+    let headers = {
+        method: 'GET',
+        headers: new Headers({
+            'Accept': 'application/json'
+        })
+    }
+
+    fetch(url, headers)
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            let accountPicture = document.getElementById("account-picture")
+            if (data.picture != "null") {
+                accountPicture.src = data.picture
+            }
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
+}
+
 window.addEventListener("load", showProjects)
 
 var projectsPage = 1
@@ -43,14 +71,14 @@ function showProjects() {
                 div4.innerHTML = element.ementa
 
                 let a = document.createElement("a")
-                a.href = `/comments.html?id=${element.id}`
+                a.href = `/proposition-comments.html?id=${element.id}`
 
                 div2.appendChild(img)
                 div2.appendChild(div3)
                 div2.appendChild(div4)
-                div.appendChild(div2)
-                a.appendChild(div)
-                cardsWrap.appendChild(a)
+                a.appendChild(div2)
+                div.appendChild(a)
+                cardsWrap.appendChild(div)
             });
         })
         .catch(function(error) {

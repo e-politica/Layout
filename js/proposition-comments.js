@@ -12,6 +12,34 @@ var urlParams = function() {
     return data
 }()
 
+window.addEventListener("load", showAccountPicture)
+
+function showAccountPicture() {
+    let session = JSON.parse(localStorage.getItem("epolitica-session"))
+
+    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/user/public/${session.user_id}`
+    let headers = {
+        method: 'GET',
+        headers: new Headers({
+            'Accept': 'application/json'
+        })
+    }
+
+    fetch(url, headers)
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            let accountPicture = document.getElementById("account-picture")
+            if (data.picture != "null") {
+                accountPicture.src = data.picture
+            }
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
+}
+
 window.addEventListener("load", showProjectInfo)
 
 function showProjectInfo() {
@@ -44,7 +72,7 @@ function sendComment() {
 
     let session = JSON.parse(localStorage.getItem("epolitica-session"))
 
-    let url = `https://a84f-2804-7f0-bec1-90e0-7d86-656-c293-9dd9.sa.ngrok.io/v1/proposition/${urlParams.id}/comment`
+    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/proposition/${urlParams.id}/comment`
     let headers = {
         method: 'POST',
         headers: new Headers({
@@ -60,16 +88,11 @@ function sendComment() {
             if (response.status != 200) {
                 throw new Error('something went wrong while commenting')
             }
-            return response.json()
-        })
-        .then((data) => {
-            console.log(data)
+            location.reload()
         })
         .catch(function(error) {
             console.log(error)
         })
-
-    // location.reload()
 }
 
 var commentsPage = 1
@@ -82,9 +105,9 @@ function loadMoreComments() {
 window.addEventListener("load", showComments)
 
 function showComments() {
-    let commentSection = document.getElementById("comment-section")
+    let commentSection = document.getElementById("comments-area")
 
-    let url = `https://a84f-2804-7f0-bec1-90e0-7d86-656-c293-9dd9.sa.ngrok.io/v1/proposition/${urlParams.id}/comments?page=${commentsPage}&limit=15`
+    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/proposition/${urlParams.id}/comments?page=${commentsPage}&limit=15`
     let headers = {
         method: 'GET',
         headers: new Headers({
@@ -101,6 +124,8 @@ function showComments() {
                 let div = document.createElement("div")
                 div.className = "card"
 
+                let div2 = document.createElement("div")
+
                 let nome = document.createElement("h2")
                 nome.className = "profile-name"
                 nome.innerHTML = element.user_public_info.name
@@ -108,13 +133,16 @@ function showComments() {
                 let imagem = document.createElement("img")
                 imagem.className = "profile-img"
                 imagem.src = element.user_public_info.picture
+                imagem.referrerPolicy = "no-referrer"
 
                 let comment = document.createElement("p")
                 comment.className = "profile-info"
                 comment.innerHTML = element.comment
-                div.appendChild(nome)
-                div.appendChild(comment)
+
+                div2.appendChild(nome)
+                div2.appendChild(comment)
                 div.appendChild(imagem)
+                div.appendChild(div2)
                 commentSection.appendChild(div)
 
             })

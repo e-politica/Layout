@@ -1,16 +1,30 @@
-var ul = document.querySelector('nav ul')
-var menuBtn = document.querySelector('.menu-btn i')
+window.addEventListener("load", showAccountPicture)
 
-function menuShow() {
-    if (ul.classList.contains('open')) {
-        ul.classList.remove('open')
-    } else {
-        ul.classList.add('open')
+function showAccountPicture() {
+    let session = JSON.parse(localStorage.getItem("epolitica-session"))
+
+    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/user/public/${session.user_id}`
+    let headers = {
+        method: 'GET',
+        headers: new Headers({
+            'Accept': 'application/json'
+        })
     }
-}
 
-window.addEventListener("load", showDeputies)
-window.addEventListener("load", showParties)
+    fetch(url, headers)
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            let accountPicture = document.getElementById("account-picture")
+            if (data.picture != "null") {
+                accountPicture.src = data.picture
+            }
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
+}
 
 var deputiesPage = 1
 
@@ -18,6 +32,8 @@ function loadMoreDeputies() {
     deputiesPage++
     showDeputies()
 }
+
+window.addEventListener("load", showDeputies)
 
 function showDeputies() {
     let containerCard = document.getElementById("container-card")
@@ -41,10 +57,9 @@ function showDeputies() {
 
                 let a = document.createElement("a")
                 a.className = "card"
-                a.href = `/perfilpolitico.html?id=${element.id}`
+                a.href = `/politician-info.html?id=${element.id}`
 
                 let div = document.createElement("div")
-                    // div.className = "card"
 
                 let img = document.createElement("img")
                 img.src = element.urlFoto
@@ -64,6 +79,8 @@ function showDeputies() {
             console.log(error)
         })
 }
+
+window.addEventListener("load", showParties)
 
 function showParties() {
     let partyList = document.getElementById("party-list")
@@ -90,8 +107,6 @@ function showParties() {
                 a.href = element.uri
                 a.innerHTML = element.sigla
 
-                // gg easy aeee
-                // voy salvar
                 li.appendChild(a)
                 partyList.appendChild(li)
             })
