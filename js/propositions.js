@@ -3,7 +3,7 @@ window.addEventListener("load", showAccountPicture)
 function showAccountPicture() {
     let session = JSON.parse(localStorage.getItem("epolitica-session"))
 
-    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/user/public/${session.user_id}`
+    let url = `https://ce81-2804-7f0-bec1-90e0-8d91-e776-402-1db5.sa.ngrok.io/v1/user/public/${session.user_id}`
     let headers = {
         method: 'GET',
         headers: new Headers({

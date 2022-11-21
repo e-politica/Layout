@@ -17,7 +17,7 @@ function sendRegister() {
     let email = document.getElementById("register-email").value
     let password = document.getElementById("register-password").value
 
-    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/user/register`
+    let url = `https://ce81-2804-7f0-bec1-90e0-8d91-e776-402-1db5.sa.ngrok.io/v1/user/register`
     let headers = {
         method: 'POST',
         headers: new Headers({
@@ -52,7 +52,7 @@ function sendLogin() {
     let email = document.getElementById("login-email").value
     let password = document.getElementById("login-password").value
 
-    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/user/login`
+    let url = `https://ce81-2804-7f0-bec1-90e0-8d91-e776-402-1db5.sa.ngrok.io/v1/user/login`
     let headers = {
         method: 'POST',
         headers: new Headers({
@@ -83,7 +83,7 @@ function sendLogin() {
 
 
 function handleGoogleCredentialResponse(response) {
-    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/user/login/google`
+    let url = `https://ce81-2804-7f0-bec1-90e0-8d91-e776-402-1db5.sa.ngrok.io/v1/user/login/google`
     let headers = {
         method: 'POST',
         headers: new Headers({

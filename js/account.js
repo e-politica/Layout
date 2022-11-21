@@ -12,7 +12,7 @@ window.addEventListener("load", showUserInfo)
 function showUserInfo() {
     let session = JSON.parse(localStorage.getItem("epolitica-session"))
 
-    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/user/public/${session.user_id}`
+    let url = `https://ce81-2804-7f0-bec1-90e0-8d91-e776-402-1db5.sa.ngrok.io/v1/user/public/${session.user_id}`
     let headers = {
         method: 'GET',
         headers: new Headers({
@@ -46,7 +46,7 @@ function sendUpdateUser() {
 
     let session = JSON.parse(localStorage.getItem("epolitica-session"))
 
-    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/user`
+    let url = `https://ce81-2804-7f0-bec1-90e0-8d91-e776-402-1db5.sa.ngrok.io/v1/user`
     let headers = {
         method: 'PUT',
         headers: new Headers({
@@ -87,7 +87,7 @@ function showFollows() {
     let follows = document.getElementById("follows")
     let session = JSON.parse(localStorage.getItem("epolitica-session"))
 
-    let url = `https://74ff-2804-7f0-bec1-90e0-cd6f-1372-2e77-6521.sa.ngrok.io/v1/user/follows?page=${followsPage}&limit=10`
+    let url = `https://ce81-2804-7f0-bec1-90e0-8d91-e776-402-1db5.sa.ngrok.io/v1/user/follows?page=${followsPage}&limit=10`
     let headers = {
         method: 'GET',
         headers: new Headers({
